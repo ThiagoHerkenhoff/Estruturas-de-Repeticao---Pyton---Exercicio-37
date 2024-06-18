@@ -1,0 +1,17 @@
+# 37 - Escreva um programa que verifique quais números entre 1000 e 9999 (inclusive) possuem propriedade
+# seguinte: a soma dos dígitos de mais baixa ordem com os dois dígitos de mais alta ordem elevada ao
+# quadrado é igualao próprio número. Por exemplo, para o inteiro 3025, temos que:
+# 30 + 25 = 55
+# 55² = 3025
+
+for num in range(1000, 10000):
+    # Extrair os dígitos de alta e baixa ordem
+    baixa_ordem = num % 100
+    alta_ordem = num // 100
+
+    # Calcular a soma dos dígitos de baixa ordem com os dois dígitos de alta ordem elevados ao quadrado
+    soma_quadrados = (alta_ordem // 10) ** 2 + (alta_ordem % 10) ** 2 + baixa_ordem
+
+    # Verificar se é igual ao próprio número
+    if soma_quadrados == num:
+        print(num)
